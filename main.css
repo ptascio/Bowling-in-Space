@@ -1,21 +1,29 @@
 #root {
-  height: 400px;
-  width: 460px;
+  height: 480px;
+  width: 480px;
+  background: red;
   border: 1px solid #000;
-  background: #000;
 }
 
 
 ul {
   list-style: none;
+  height: 440px;
+  width: 440px;
 }
 
 li {
   float: left;
   width: 40px;
   height: 40px;
-
+  background: #000;
+  border: 1px solid #000;
 }
+
+#movingPiece {
+  margin: 8px;
+}
+
 
 lil-chr {
   width: 20px;
