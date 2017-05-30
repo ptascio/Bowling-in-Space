@@ -2,6 +2,7 @@
   height: 400px;
   width: 460px;
   border: 1px solid #000;
+  background: #000;
 }
 
 
@@ -13,7 +14,7 @@ li {
   float: left;
   width: 40px;
   height: 40px;
-  
+
 }
 
 lil-chr {

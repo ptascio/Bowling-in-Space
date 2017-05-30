@@ -12,15 +12,6 @@ function createBoard(){
   return bigBoard;
 }
 
-
-
-function lilChar(){
-  var chr = document.createElement('div');
-  chr.style.cssText = "width: 20px; height:20px; background:green;";
-  chr.setAttribute("id", "movingPiece");
-  return chr;
-}
-
 function moveChar(){
  var piece = document.getElementById("movingPiece");
  piece.x += 1;
@@ -36,17 +27,46 @@ function placeBoard(bord){
       var li = document.createElement('li');
       li.x = i;
       li.y = j;
-      li.innerText = innerBoard[j];
+      if (innerBoard[j] === player){
+        li.appendChild(player);
+      }else if (innerBoard[j] === computerPlayer){
+        li.appendChild(computerPlayer);
+      }
+      else {
+          li.innerText = innerBoard[j];
+      }
+
       row.appendChild(li);
     }
   }
   return row;
 }
 
+
+function playerShape(){
+  var chr = document.createElement('div');
+  chr.style.cssText = "width: 20px; height:20px; background:green; border: 1px solid #000; border-radius: 50%";
+  chr.setAttribute("id", "movingPiece");
+  return chr;
+}
+
+var player = playerShape();
+
 function compPlayer(){
-var num = Math.round(Math.random() * (1-0) + 0);
-var players = ["P", "Z"];
-return players[num];
+  var num = Math.round(Math.random() * (1-0) + 0);
+  var players = ["P", "Z"];
+  return compPlayerShape(players[num]);
+}
+
+function compPlayerShape(type){
+  var chr = document.createElement('div');
+  if (type === "P"){
+    chr.style.cssText = "width: 20px; height:20px; background:white; border: 1px solid #000; border-radius: 50%";
+  }else {
+    chr.style.cssText = "width: 20px; height:20px; background:red; border: 1px solid #000; border-radius: 50%";
+  }
+  chr.setAttribute("id", "movingPiece");
+  return chr;
 }
 
 var computerPlayer = compPlayer();
@@ -54,7 +74,7 @@ var computerPlayer = compPlayer();
 function placePiece(x, y){
   board = createBoard();
   board[x][y] = computerPlayer;
-  board[playerX][playerY] = "B";
+  board[playerX][playerY] = player;
   clash(x, y);
   var row = placeBoard(board);
   root = document.getElementById("root");
@@ -82,13 +102,13 @@ function movePiece(){
 }
 
 function clash(ax, ay){
-  if (board[ax][ay] === "B" && computerPlayer === "P"){
+  if (board[ax][ay] === player && computerPlayer.style.background === "white"){
     points+=10;
     showPoints.innerText = `Points: ${points}`;
     x = -1;
     y = Math.floor(Math.random() * (9 - 0) + 0);
     computerPlayer = compPlayer();
-  }else if (board[ax][ay] === "B" && computerPlayer === "Z"){
+  }else if (board[ax][ay] === player && computerPlayer.style.background === "red"){
     points-=10;
     showPoints.innerText = `Points: ${points}`;
     x = -1;
