@@ -45,7 +45,7 @@ function placeBoard(bord){
 
 function playerShape(){
   var chr = document.createElement('div');
-  chr.style.cssText = "width: 20px; height:20px; background:green; border: 1px solid #000; border-radius: 50%";
+  chr.style.cssText = "width: 20px; height:20px; background: violet; border: 1px solid #000; border-radius: 50%";
   chr.setAttribute("id", "movingPiece");
   return chr;
 }
@@ -61,9 +61,9 @@ function compPlayer(){
 function compPlayerShape(type){
   var chr = document.createElement('div');
   if (type === "P"){
-    chr.style.cssText = "width: 20px; height:20px; background:white; border: 1px solid #000; border-radius: 50%";
+    chr.style.cssText = "width: 10px; height:30px; background:white; border: 1px solid #000; border-radius: 50%";
   }else {
-    chr.style.cssText = "width: 20px; height:20px; background:red; border: 1px solid #000; border-radius: 50%";
+    chr.style.cssText = "width: 10px; height:30px; background:red; border: 1px solid #000; border-radius: 50%";
   }
   chr.setAttribute("id", "movingPiece");
   return chr;
