@@ -1,10 +1,21 @@
+body {
+  text-align: center;
+  background: url('./images/stars3.jpeg');
+  color: #fff;
+}
+
 #root {
   height: 500px;
   width: 500px;
   background: url('./images/stars1.jpg');
   border: 1px solid #000;
+  margin: auto;
 }
 
+h1 {
+  font-family: 'Bungee Outline', cursive;
+  color: rgba(255, 0, 0, 0.6);
+}
 
 ul {
   list-style: none;
@@ -51,4 +62,9 @@ li {
   background-position: center;
   border-radius: 50%;
   margin: 4px;
+}
+
+.points {
+  font-family: 'Press Start 2P', cursive;
+  color: rgba(255,115,180,0.8);
 }

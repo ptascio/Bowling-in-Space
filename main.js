@@ -149,7 +149,9 @@ function play(){
 
 document.addEventListener("DOMContentLoaded", () => {
   showPoints = document.getElementById("points");
+  showPoints.setAttribute('class', 'points');
   showPoints.innerText = `Points: ${points}`;
+
   play();
 
 });
