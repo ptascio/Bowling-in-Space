@@ -67,7 +67,6 @@ function compPlayerShape(type){
     chr.setAttribute("type", "Z");
   }
   chr.setAttribute("id", "movingPiece");
-  console.log(chr);
   return chr;
 }
 
@@ -140,10 +139,9 @@ function clash(ax, ay){
 
 function play(){
   // placePiece(x, y);
-  movePiece();
-  // window.setInterval(function(){
-  //   cancel = window.requestAnimationFrame(movePiece);
-  // }, 700);
+  window.setInterval(function(){
+    cancel = window.requestAnimationFrame(movePiece);
+  }, 700);
 
 }
 
@@ -151,6 +149,7 @@ function play(){
 
 document.addEventListener("DOMContentLoaded", () => {
   showPoints = document.getElementById("points");
+  showPoints.innerText = `Points: ${points}`;
   play();
 
 });
