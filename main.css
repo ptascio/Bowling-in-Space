@@ -1,7 +1,7 @@
 #root {
-  height: 480px;
-  width: 480px;
-  background: red;
+  height: 500px;
+  width: 500px;
+  background: url('./images/stars1.jpg');
   border: 1px solid #000;
 }
 
@@ -14,19 +14,30 @@ ul {
 
 li {
   float: left;
-  width: 40px;
-  height: 40px;
-  background: #000;
-  border: 1px solid #000;
+  width: 42px;
+  height: 42px;
+  /*padding: 1px;*/
+  border: 1px solid red;
+  background: url('./images/stars1.jpg');
+  background-size: 38px 38px;
 }
 
-#movingPiece {
-  margin: 8px;
+.good-pin {
+  width: 33px;
+  height: 33px;
+  background-image: url('./images/goodpin2.jpeg');
+  background-size: 40px 40px;
+  background-position: center;
+  border-radius: 50%;
+  margin: 4px;
 }
 
-
-lil-chr {
-  width: 20px;
-  height: 20px;
-  background: green;
+.bad-pin {
+  width: 33px;
+  height: 33px;
+  background-image: url('./images/badpin.jpg');
+  background-size: 40px 40px;
+  background-position: center;
+  border-radius: 50%;
+  margin: 4px;
 }
