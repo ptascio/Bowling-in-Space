@@ -54,7 +54,7 @@ var player = playerShape();
 
 function compPlayer(){
   var num = Math.round(Math.random() * (1-0) + 0);
-  var players = ["Z", "Z"];
+  var players = ["P", "Z"];
   return compPlayerShape(players[num]);
 }
 
@@ -62,11 +62,13 @@ function compPlayerShape(type){
   var chr = document.createElement('div');
   if (type === "P"){
     chr.setAttribute("class", "good-pin");
+    chr.setAttribute("type", "P");
   }else {
     chr.setAttribute("class", "bad-pin");
+    chr.setAttribute("type", "Z");
   }
   chr.setAttribute("id", "movingPiece");
-
+  console.log(chr);
   return chr;
 }
 
@@ -103,13 +105,14 @@ function movePiece(){
 }
 
 function clash(ax, ay){
-  if (board[ax][ay] === player && computerPlayer.style.background === "white"){
+  var friendOrFoe = computerPlayer.attributes.type.nodeValue;
+  if (board[ax][ay] === player && friendOrFoe === "P"){
     points+=10;
     showPoints.innerText = `Points: ${points}`;
     x = -1;
     y = Math.floor(Math.random() * (9 - 0) + 0);
     computerPlayer = compPlayer();
-  }else if (board[ax][ay] === player && computerPlayer.style.background === "red"){
+  }else if (board[ax][ay] === player && friendOrFoe === "Z"){
     points-=10;
     showPoints.innerText = `Points: ${points}`;
     x = -1;
@@ -138,10 +141,10 @@ function clash(ax, ay){
 
 function play(){
   // placePiece(x, y);
-  movePiece();
-  // window.setInterval(function(){
-  //   cancel = window.requestAnimationFrame(movePiece);
-  // }, 700);
+  //movePiece();
+  window.setInterval(function(){
+    cancel = window.requestAnimationFrame(movePiece);
+  }, 700);
 
 }
 
