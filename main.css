@@ -17,9 +17,20 @@ li {
   width: 42px;
   height: 42px;
   /*padding: 1px;*/
-  border: 1px solid red;
+  border: 1px solid rgba(255, 0, 0, 0.1);
   background: url('./images/stars1.jpg');
   background-size: 38px 38px;
+}
+
+
+.bwling-ball {
+  width: 33px;
+  height: 33px;
+  background-image: url('./images/bowlingball.jpg');
+  background-size: 37px 37px;
+  border-radius: 50%;
+  background-position: center;
+  margin: 4px;
 }
 
 .good-pin {

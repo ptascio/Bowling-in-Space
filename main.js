@@ -45,8 +45,7 @@ function placeBoard(bord){
 
 function playerShape(){
   var chr = document.createElement('div');
-  chr.style.cssText = "width: 33px; height:33px; background-image: url('./images/bowlingball.jpg'); background-size: 33px 33px;border: 1px solid #000; border-radius: 50%";
-  chr.setAttribute("id", "movingPiece");
+  chr.setAttribute("class", "bwling-ball");
   return chr;
 }
 
@@ -141,10 +140,10 @@ function clash(ax, ay){
 
 function play(){
   // placePiece(x, y);
-  //movePiece();
-  window.setInterval(function(){
-    cancel = window.requestAnimationFrame(movePiece);
-  }, 700);
+  movePiece();
+  // window.setInterval(function(){
+  //   cancel = window.requestAnimationFrame(movePiece);
+  // }, 700);
 
 }
 
